@@ -15,7 +15,7 @@ HOW TO START THIS PROJECT: Se comenzo el projecto con la interfaz
   "Greenfoot" para facilitar la visualización.
 
 AUTHORS:
-  Adrian Penagos …………………………24914
+Adrian Penagos …………………………24914
 Marian Olivares …………………………241016
 Diana Sosa ………………………………241040
 Oscar Rompich …………………………24880
