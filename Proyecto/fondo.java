@@ -8,7 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class fondo extends World
 {
-
+    private GreenfootSound backgroundMusic;
+    
     /**
      * Constructor for objects of class fondo.
      * 
@@ -17,6 +18,9 @@ public class fondo extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1100, 600, 1); 
+        backgroundMusic = new GreenfootSound("Rhythm of Fire.mp3");
+        backgroundMusic.playLoop();
+        Greenfoot.start();
         prepare();
     }
     
