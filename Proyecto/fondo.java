@@ -32,8 +32,8 @@ public class fondo extends World
     {
         Penguin penguin = new Penguin();
         addObject(penguin,179,389);
-        Rana rana = new Rana();
-        addObject(rana,938,361);
+        Polo polo = new Polo();
+        addObject(polo,938,361);
         Pared pared = new Pared();
         addObject(pared,58,131);
         Pared pared2 = new Pared();
@@ -83,15 +83,15 @@ public class fondo extends World
         Pared pared16 = new Pared();
         addObject(pared16,538,557);
         penguin.setLocation(182,374);
-        rana.setLocation(935,337);
-        rana.setLocation(932,347);
-        removeObject(rana);
+        polo.setLocation(935,337);
+        polo.setLocation(932,347);
+        removeObject(polo);
         penguin.setLocation(179,377);
         penguin.setLocation(174,383);
         penguin.setLocation(174,395);
         removeObject(penguin);
-        Rana rana2 = new Rana();
-        addObject(rana2,912,376);
+        Polo polo2 = new Polo();
+        addObject(polo2,912,376);
         Penguin penguin2 = new Penguin();
         addObject(penguin2,214,377);
     }

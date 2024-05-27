@@ -1,6 +1,7 @@
 import greenfoot.*;
 import java.util.*;
-public class Penguin extends Actor 
+
+public class Polo extends Actor 
 {
     int frame = 1;
     int xVal, yVal;
@@ -10,23 +11,29 @@ public class Penguin extends Actor
     
     boolean blnGo=false;
     
-    public static GreenfootImage WalkR1= new GreenfootImage ("pingu00.png");
-    public static GreenfootImage WalkR2= new GreenfootImage ("pingu01.png");
-    public static GreenfootImage WalkR3= new GreenfootImage ("pingu02.png");
-    public static GreenfootImage WalkR4= new GreenfootImage ("pingu03.png");
-    public static GreenfootImage WalkL1= new GreenfootImage ("pingu08.png");
-    public static GreenfootImage WalkL2= new GreenfootImage ("pingu09.png");
-    public static GreenfootImage WalkL3= new GreenfootImage ("pingu10.png");
-    public static GreenfootImage WalkL4= new GreenfootImage ("pingu11.png");
-    public static GreenfootImage WalkU1= new GreenfootImage ("pingu04.png");
-    public static GreenfootImage WalkU2= new GreenfootImage ("pingu05.png");
-    public static GreenfootImage WalkU3= new GreenfootImage ("pingu06.png");
-    public static GreenfootImage WalkU4= new GreenfootImage ("pingu07.png");
+    public static GreenfootImage WalkR1= new GreenfootImage ("polo200.png");
+    public static GreenfootImage WalkR2= new GreenfootImage ("polo201.png");
+    public static GreenfootImage WalkR3= new GreenfootImage ("polo202.png");
+    public static GreenfootImage WalkR4= new GreenfootImage ("polo203.png");
+    public static GreenfootImage WalkL1= new GreenfootImage ("polo204.png");
+    public static GreenfootImage WalkL2= new GreenfootImage ("polo205.png");
+    public static GreenfootImage WalkL3= new GreenfootImage ("polo206.png");
+    public static GreenfootImage WalkL4= new GreenfootImage ("polo207.png");
+    public static GreenfootImage WalkU1= new GreenfootImage ("polo208.png");
+    public static GreenfootImage WalkU2= new GreenfootImage ("polo209.png");
+    public static GreenfootImage WalkU3= new GreenfootImage ("polo210.png");
+    public static GreenfootImage WalkU4= new GreenfootImage ("polo211.png");
+    public static GreenfootImage WalkD1= new GreenfootImage ("polo212.png");
+    public static GreenfootImage WalkD2= new GreenfootImage ("polo213.png");
+    public static GreenfootImage WalkD3= new GreenfootImage ("polo214.png");
+    public static GreenfootImage WalkD4= new GreenfootImage ("polo215.png");
+    int walkpolodelay = 25;
+    int a = 100;
     
-    int walkdelay = 20;
+    
     public void act() 
     {
-        getImage().scale(50,50);
+        getImage().scale(a,a);
         movimiento(); 
     }
 
@@ -37,7 +44,7 @@ public class Penguin extends Actor
             frame=1;
         }
 
-            if(Greenfoot.isKeyDown("left")) 
+            if(Greenfoot.isKeyDown("a")) 
             {
                 blnGo=true;
                 xVal=-XMove;
@@ -45,9 +52,9 @@ public class Penguin extends Actor
                 stop=0;
                 setLocation(getX()+xVal, getY());
                 moveleftframe();
-                Greenfoot.delay(walkdelay);
+                Greenfoot.delay(walkpolodelay);
             }
-            if(Greenfoot.isKeyDown("right"))
+            if(Greenfoot.isKeyDown("d"))
             {
                 blnGo=true;
                 xVal=+XMove;
@@ -55,27 +62,27 @@ public class Penguin extends Actor
                 stop=0;
                 setLocation(getX()+xVal, getY());
                 moverightframe();
-                Greenfoot.delay(walkdelay);
+                Greenfoot.delay(walkpolodelay);
             }
-            if(Greenfoot.isKeyDown("up"))
+            if(Greenfoot.isKeyDown("w"))
             {
                 blnGo=true;
                 yVal=-YMove;
                 xVal=0;
                 stop=0;
-                moveupframe();
+                movedownframe();
                 setLocation(getX(), getY()+yVal);
-                Greenfoot.delay(walkdelay);
+                Greenfoot.delay(walkpolodelay);
             }
-            if(Greenfoot.isKeyDown("down"))
+            if(Greenfoot.isKeyDown("s"))
             {
                 blnGo=true;
                 yVal=+YMove;
                 xVal=0;
                 stop=0;
-                moveleftframe();
+                moveupframe();
                 setLocation(getX(), getY()+yVal);
-                Greenfoot.delay(walkdelay);
+                Greenfoot.delay(walkpolodelay);
             }
 
     }
@@ -86,24 +93,24 @@ public class Penguin extends Actor
         if(frame == 1)
         {
             setImage(WalkL1);
-            getImage().scale(50,50);
+            getImage().scale(a,a);
         }
         else if (frame == 2)
         {
             setImage(WalkL2);
-            getImage().scale(50,50);
+            getImage().scale(a,a);
 
         }
         else if (frame == 3)
         {
             setImage(WalkL3);
-            getImage().scale(50,50);
+            getImage().scale(a,a);
             
         }
         else if (frame == 4)
         {
             setImage(WalkL4);
-            getImage().scale(50,50);
+            getImage().scale(a,a);
             frame=1;
             return;
         }
@@ -117,24 +124,24 @@ public class Penguin extends Actor
         if(frame == 1)
         {
             setImage(WalkR1);
-            getImage().scale(50,50);
+            getImage().scale(a,a);
         }
         else if (frame == 2)
         {
             setImage(WalkR2);
-            getImage().scale(50,50);
+            getImage().scale(a,a);
 
         }
         else if (frame == 3)
         {
             setImage(WalkR3);
-            getImage().scale(50,50);
+            getImage().scale(a,a);
             
         }
         else if (frame == 4)
         {
             setImage(WalkR4);
-            getImage().scale(50,50);
+            getImage().scale(a,a);
             frame=1;//it will "restart the frames" so it will go back to the first one
             return;//this is so it won't add 1 to the reseted int
         }
@@ -147,22 +154,22 @@ public class Penguin extends Actor
         if(frame == 1)//if the int frame is =1it will change it to the second image
         {
             setImage(WalkU1);
-            getImage().scale(50,50);
+            getImage().scale(a,a);
         }
         else if (frame == 2)
         {
             setImage(WalkU2);
-            getImage().scale(50,50);
+            getImage().scale(a,a);
         }
         else if (frame == 3)
         {
             setImage(WalkU3);
-            getImage().scale(50,50);
+            getImage().scale(a,a);
         }
         else if (frame == 4)
         {
             setImage(WalkU4);
-            getImage().scale(50,50);
+            getImage().scale(a,a);
             frame=1;//it will "restart the frames" so it will go back to the first one
             return;//this is so it won't add 1 to the reseted int
         }
@@ -173,27 +180,26 @@ public class Penguin extends Actor
 
         if(frame == 1)//if the int frame is =1it will change it to the second image
         {
-            setImage(WalkL1);
-            getImage().scale(50,50);
+            setImage(WalkD1);
+            getImage().scale(a,a);
         }
         else if (frame == 2)
         {
-            setImage(WalkL2);
-            getImage().scale(50,50);
+            setImage(WalkD2);
+            getImage().scale(a,a);
         }
         else if (frame == 3)
         {
-            setImage(WalkL3);
-            getImage().scale(50,50);
+            setImage(WalkD3);
+            getImage().scale(a,a);
         }
         else if (frame == 4)
         {
-            setImage(WalkL4);
-            getImage().scale(50,50);
+            setImage(WalkD4);
+            getImage().scale(a,a);
             frame=1;//it will "restart the frames" so it will go back to the first one
             return;//this is so it won't add 1 to the reseted int
         }
         frame++;//it will add 1 to the int after it changes the image
     }
 }
-
