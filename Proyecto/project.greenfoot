@@ -1,7 +1,7 @@
 #Greenfoot project file
 class.Instrucciones.image=Instrucciones.png
 class.Pared.image=Bloque.jpeg
-class.Penguin.image=wombat.png
+class.Penguin.image=barrel.png
 class.Rana.image=frog.png
 class.TitleScreen.image=title.png
 class.fondo.image=sandstone.jpg
