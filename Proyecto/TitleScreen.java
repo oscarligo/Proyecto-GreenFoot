@@ -35,7 +35,7 @@ public class TitleScreen extends World
         
         if (Greenfoot.isKeyDown("space")) {
             backgroundMusic.stop(); // Stop the music
-            Greenfoot.setWorld(new fondo());
+            Greenfoot.setWorld(new Juego());
         }
         
         if (Greenfoot.isKeyDown("i")) {

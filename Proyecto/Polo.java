@@ -5,8 +5,8 @@ public class Polo extends Actor
 {
     int frame = 1;
     int xVal, yVal;
-    int XMove=50;
-    int YMove=50;
+    int XMove=15;
+    int YMove=15;
     int stop=0;
     
     boolean blnGo=false;
@@ -27,13 +27,13 @@ public class Polo extends Actor
     public static GreenfootImage WalkD2= new GreenfootImage ("polo213.png");
     public static GreenfootImage WalkD3= new GreenfootImage ("polo214.png");
     public static GreenfootImage WalkD4= new GreenfootImage ("polo215.png");
-    int walkpolodelay = 25;
-    int a = 100;
+    int walkpolodelay = 7;
+    int a = 75;
     
     
     public void act() 
     {
-        getImage().scale(a,a);
+        //getImage().scale(a,a);
         movimiento(); 
     }
 
@@ -93,24 +93,24 @@ public class Polo extends Actor
         if(frame == 1)
         {
             setImage(WalkL1);
-            getImage().scale(a,a);
+            //getImage().scale(a,a);
         }
         else if (frame == 2)
         {
             setImage(WalkL2);
-            getImage().scale(a,a);
+            //getImage().scale(a,a);
 
         }
         else if (frame == 3)
         {
             setImage(WalkL3);
-            getImage().scale(a,a);
+            //getImage().scale(a,a);
             
         }
         else if (frame == 4)
         {
             setImage(WalkL4);
-            getImage().scale(a,a);
+            //getImage().scale(a,a);
             frame=1;
             return;
         }
@@ -124,24 +124,24 @@ public class Polo extends Actor
         if(frame == 1)
         {
             setImage(WalkR1);
-            getImage().scale(a,a);
+            //getImage().scale(a,a);
         }
         else if (frame == 2)
         {
             setImage(WalkR2);
-            getImage().scale(a,a);
+            //getImage().scale(a,a);
 
         }
         else if (frame == 3)
         {
             setImage(WalkR3);
-            getImage().scale(a,a);
+            //getImage().scale(a,a);
             
         }
         else if (frame == 4)
         {
             setImage(WalkR4);
-            getImage().scale(a,a);
+            //getImage().scale(a,a);
             frame=1;//it will "restart the frames" so it will go back to the first one
             return;//this is so it won't add 1 to the reseted int
         }
@@ -154,22 +154,22 @@ public class Polo extends Actor
         if(frame == 1)//if the int frame is =1it will change it to the second image
         {
             setImage(WalkU1);
-            getImage().scale(a,a);
+            //getImage().scale(a,a);
         }
         else if (frame == 2)
         {
             setImage(WalkU2);
-            getImage().scale(a,a);
+            //getImage().scale(a,a);
         }
         else if (frame == 3)
         {
             setImage(WalkU3);
-            getImage().scale(a,a);
+            //getImage().scale(a,a);
         }
         else if (frame == 4)
         {
             setImage(WalkU4);
-            getImage().scale(a,a);
+            //getImage().scale(a,a);
             frame=1;//it will "restart the frames" so it will go back to the first one
             return;//this is so it won't add 1 to the reseted int
         }
@@ -181,25 +181,58 @@ public class Polo extends Actor
         if(frame == 1)//if the int frame is =1it will change it to the second image
         {
             setImage(WalkD1);
-            getImage().scale(a,a);
+            //getImage().scale(a,a);
         }
         else if (frame == 2)
         {
             setImage(WalkD2);
-            getImage().scale(a,a);
+            //getImage().scale(a,a);
         }
         else if (frame == 3)
         {
             setImage(WalkD3);
-            getImage().scale(a,a);
+            //getImage().scale(a,a);
         }
         else if (frame == 4)
         {
             setImage(WalkD4);
-            getImage().scale(a,a);
+            //getImage().scale(a,a);
             frame=1;//it will "restart the frames" so it will go back to the first one
             return;//this is so it won't add 1 to the reseted int
         }
         frame++;//it will add 1 to the int after it changes the image
+    }
+    
+        private void placeBlock() 
+    {
+        int x = getX()+70;
+        int y = getY();
+    
+        Pared pared = new Pared();
+        getWorld().addObject(pared, x, y);
+        
+    }
+    
+    private void removeBlock() 
+    {
+      int x = getX();
+      int y = getY();
+    
+      Pared blockToRemove = (Pared) getOneObjectAtOffset(x, y, Pared.class);
+    
+      if (blockToRemove != null) {
+        getWorld().removeObject(blockToRemove);
+      }
+    }
+    
+    public void setLocation(int x, int y)
+    {
+        int oldX = getX();
+        int oldY = getY();
+        super.setLocation(x, y);
+        if(!getIntersectingObjects(Pared.class).isEmpty())
+        {
+            super.setLocation(oldX, oldY);
+        }
     }
 }
